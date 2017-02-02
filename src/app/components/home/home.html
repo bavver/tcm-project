@@ -1,0 +1,40 @@
+<div id="background">
+		<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-sm-4 col-xs-4"></div>
+			<div class="col-md-6 col-sm-7 col-xs-7 hpInputGroup">
+				<div class="col-md-8 col-sm-8 col-xs-8">
+					<input type="text" class="hpInputKeyword form-control input-lg" ng-model="$ctrl.keyword" ng-change="$ctrl.search($ctrl.keyword,$ctrl.category)" ng-model-options="{debounce: 1000}" placeholder="I'm looking for"/>
+				</div>
+				<div class="col-md-2 col-sm-2 col-xs-2">
+					<a ng-click="$ctrl.popup()" class="hpInputSearch btn btn-warning btn-xs"><i class="fa fa-filter fa-lg"></i></a>
+				</div>
+				<!--<div class="col-md-4 col-sm-4 col-xs-4">
+					<input type="radio" ng-model="$ctrl.category" ng-change="$ctrl.search($ctrl.keyword,$ctrl.category)"  class="input-md" value=""/>All
+					<input type="radio" ng-model="$ctrl.category" ng-change="$ctrl.search($ctrl.keyword,$ctrl.category)"  class="input-md" value="Episode"/>Episode
+					<input type="radio" ng-model="$ctrl.category" ng-change="$ctrl.search($ctrl.keyword,$ctrl.category)"  class="input-md" value="Movie"/>Movie
+					<input type="radio" ng-model="$ctrl.category" ng-change="$ctrl.search($ctrl.keyword,$ctrl.category)"  class="input-md" value="Series"/>Series
+				</div>-->
+			</div>
+
+		</div>	
+		<div class="row">
+ 			 <h4 class="infoo">Listing items for key '{{$ctrl.keyword}}' of type '{{$ctrl.category}}'</h4>
+		</div>
+		</div>
+</div>
+<div class="container">
+    <div class="row">
+         <!--START !!!!! list of places !!!!! START -->
+        <div>
+                <a href="/#!/result?id={{place.Id}}" ng-class="{'wishborder':place.wish}" ng-if="!place.blacklist" ng-repeat="place in $ctrl.places" class="col-md-3 coffee col-sm-3 col-xs-3">
+                        <h5 class="NameOfCafe">{{place.Title}}</h5>
+                        
+                            <p class="level">{{place.Year}}</p>
+							<i ng-if="place.wish" class="fa fa-heart fa-4x leftcorner"></i>
+                </a>
+<!--end of ng repeat-->
+        </div>
+    </div>
+</div>
+
