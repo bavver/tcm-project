@@ -1,4 +1,4 @@
-# hipo-project
+# TCM-project
 This Single Page Application project uses TCM API to get movie details and list  them based on 
 specified "keyword" and selected filter value . Was built with Angular JS .   
 
